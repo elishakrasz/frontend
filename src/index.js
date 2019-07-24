@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloProvider } from 'react-apollo';
 import './index.css';
-import App from './App';
+import 'semantic-ui-css/semantic.min.css'
 import * as serviceWorker from './serviceWorker';
+
+import { client } from './apollo'
+import { Routes } from './routes';
+
+const App = () => (
+   <ApolloProvider client={client}>
+     <Routes />
+   </ApolloProvider>
+ );
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
